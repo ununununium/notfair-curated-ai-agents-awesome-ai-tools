@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#161b22;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bc8cff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="200" fill="url(#bg)" rx="12" ry="12"/>
+  <rect x="0" y="196" width="800" height="4" fill="url(#accent)" rx="0" ry="0"/>
+  <text x="400" y="75" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="700" fill="#e6edf3" text-anchor="middle">Curated AI Agents</text>
+  <text x="400" y="110" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#8b949e" text-anchor="middle">A comprehensive collection of AI agent frameworks, platforms, and autonomous agents</text>
+  <rect x="200" y="130" width="90" height="26" rx="13" fill="#1f6feb" opacity="0.3"/>
+  <text x="245" y="148" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#58a6ff" text-anchor="middle">Frameworks</text>
+  <rect x="305" y="130" width="95" height="26" rx="13" fill="#8957e5" opacity="0.3"/>
+  <text x="352" y="148" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#bc8cff" text-anchor="middle">Multi-Agent</text>
+  <rect x="415" y="130" width="80" height="26" rx="13" fill="#238636" opacity="0.3"/>
+  <text x="455" y="148" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#3fb950" text-anchor="middle">Code</text>
+  <rect x="510" y="130" width="85" height="26" rx="13" fill="#da3633" opacity="0.3"/>
+  <text x="552" y="148" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#f85149" text-anchor="middle">Research</text>
+</svg>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curated AI Agents - Comprehensive List of AI Agent Frameworks & Platforms</title>
+  <meta name="description" content="A curated list of AI agent frameworks, platforms, and ready-to-use autonomous agents. Find the best tools for building AI agents.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+    }
+    a { color: #58a6ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
+      border-bottom: 1px solid #30363d;
+    }
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #58a6ff, #bc8cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .header p {
+      color: #8b949e;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+    .header-links a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 8px 20px;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      color: #e6edf3;
+      font-size: 0.9rem;
+      transition: border-color 0.2s;
+    }
+    .header-links a:hover {
+      border-color: #58a6ff;
+      text-decoration: none;
+    }
+
+    /* Search & Filter */
+    .controls {
+      max-width: 1200px;
+      margin: 30px auto 20px;
+      padding: 0 20px;
+    }
+    .search-box {
+      width: 100%;
+      padding: 14px 20px;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      color: #e6edf3;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-box:focus { border-color: #58a6ff; }
+    .search-box::placeholder { color: #484f58; }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .filter-btn {
+      padding: 6px 16px;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 20px;
+      color: #8b949e;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover { border-color: #58a6ff; color: #58a6ff; }
+    .filter-btn.active { background: #1f6feb; border-color: #1f6feb; color: #fff; }
+
+    /* Featured */
+    .featured {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .featured-card {
+      background: linear-gradient(135deg, #1a1206 0%, #261a04 100%);
+      border: 1px solid #f0883e;
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .featured-badge {
+      background: #f0883e;
+      color: #0d1117;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .featured-content h3 { font-size: 1.2rem; margin-bottom: 6px; }
+    .featured-content p { color: #8b949e; font-size: 0.9rem; }
+    .featured-links { margin-top: 10px; }
+    .featured-links a {
+      display: inline-block;
+      margin-right: 16px;
+      color: #f0883e;
+      font-weight: 500;
+    }
+
+    /* Grid */
+    .grid-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+    }
+    .section-title {
+      font-size: 1.4rem;
+      margin: 40px 0 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #21262d;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 20px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .card:hover { border-color: #58a6ff; transform: translateY(-2px); }
+    .card h3 { font-size: 1rem; margin-bottom: 6px; }
+    .card h3 a { color: #e6edf3; }
+    .card p { color: #8b949e; font-size: 0.85rem; }
+    .card .tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 2px 10px;
+      background: #1f6feb22;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      color: #58a6ff;
+    }
+    .card.hidden { display: none; }
+
+    /* Submit */
+    .submit-section {
+      text-align: center;
+      padding: 60px 20px;
+      background: #161b22;
+      border-top: 1px solid #30363d;
+    }
+    .submit-section h2 { margin-bottom: 12px; }
+    .submit-section p { color: #8b949e; margin-bottom: 20px; }
+    .submit-btn {
+      display: inline-block;
+      padding: 12px 32px;
+      background: #238636;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .submit-btn:hover { background: #2ea043; text-decoration: none; }
+
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 32px;
+      width: 90%;
+      max-width: 500px;
+    }
+    .modal h2 { margin-bottom: 20px; }
+    .modal label { display: block; margin-bottom: 4px; color: #8b949e; font-size: 0.9rem; }
+    .modal input, .modal textarea, .modal select {
+      width: 100%;
+      padding: 10px;
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      color: #e6edf3;
+      margin-bottom: 14px;
+      font-family: inherit;
+    }
+    .modal textarea { height: 80px; resize: vertical; }
+    .modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
+    .modal-actions button {
+      padding: 8px 20px;
+      border-radius: 6px;
+      border: 1px solid #30363d;
+      background: #21262d;
+      color: #e6edf3;
+      cursor: pointer;
+    }
+    .modal-actions .primary { background: #238636; border-color: #238636; }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid #21262d;
+      color: #484f58;
+      font-size: 0.85rem;
+    }
+    .footer a { color: #58a6ff; }
+
+    .count { color: #8b949e; font-size: 0.9rem; margin-bottom: 16px; }
+
+    @media (max-width: 600px) {
+      .header h1 { font-size: 1.8rem; }
+      .grid { grid-template-columns: 1fr; }
+      .featured-card { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Curated AI Agents</h1>
+    <p>A comprehensive, community-driven collection of AI agent frameworks, platforms, and ready-to-use autonomous agents.</p>
+    <div class="header-links">
+      <a href="https://github.com/awesome-ai-tools/curated-ai-agents">GitHub</a>
+      <a href="https://github.com/awesome-ai-tools/curated-ai-agents/blob/main/CONTRIBUTING.md">Contribute</a>
+    </div>
+  </div>
+
+  <div class="controls">
+    <input type="text" class="search-box" id="searchBox" placeholder="Search AI agents, frameworks, platforms...">
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="framework">Frameworks</button>
+      <button class="filter-btn" data-filter="multi-agent">Multi-Agent</button>
+      <button class="filter-btn" data-filter="code">Code Agents</button>
+      <button class="filter-btn" data-filter="research">Research</button>
+      <button class="filter-btn" data-filter="browser">Browser</button>
+      <button class="filter-btn" data-filter="automation">Automation</button>
+      <button class="filter-btn" data-filter="sdk">SDKs</button>
+      <button class="filter-btn" data-filter="monitoring">Monitoring</button>
+    </div>
+  </div>
+
+  <div class="featured">
+    <div class="featured-card">
+      <span class="featured-badge">Featured</span>
+      <div class="featured-content">
+        <h3>Ssemble AI Clipping</h3>
+        <p>Create AI-powered short-form video clips from YouTube videos. 9 MCP tools for creating shorts, browsing caption templates, background music, gameplay overlays, and meme hooks.</p>
+        <div class="featured-links">
+          <a href="https://www.npmjs.com/package/@ssemble/mcp-server">npm package</a>
+          <a href="https://www.ssemble.com">Website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <p class="count" id="resultCount"></p>
+    <div class="grid" id="agentGrid"></div>
+  </div>
+
+  <div class="submit-section">
+    <h2>Submit an AI Agent</h2>
+    <p>Know an AI agent tool that should be on this list? Submit it!</p>
+    <button class="submit-btn" id="openModal">Submit Agent</button>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <h2>Submit an AI Agent</h2>
+      <form id="submitForm">
+        <label for="agentName">Agent Name</label>
+        <input type="text" id="agentName" required placeholder="e.g., AutoGPT">
+        <label for="agentUrl">URL</label>
+        <input type="url" id="agentUrl" required placeholder="https://github.com/...">
+        <label for="agentCategory">Category</label>
+        <select id="agentCategory">
+          <option value="Agent Frameworks">Agent Frameworks</option>
+          <option value="Multi-Agent Platforms">Multi-Agent Platforms</option>
+          <option value="Code Agents">Code Agents</option>
+          <option value="Research Agents">Research Agents</option>
+          <option value="Browser Agents">Browser Agents</option>
+          <option value="Task Automation">Task Automation</option>
+          <option value="Agent SDKs & Libraries">Agent SDKs & Libraries</option>
+          <option value="Agent Monitoring & Evaluation">Agent Monitoring & Evaluation</option>
+        </select>
+        <label for="agentDesc">Description</label>
+        <textarea id="agentDesc" required placeholder="A concise one-sentence description..."></textarea>
+        <div class="modal-actions">
+          <button type="button" id="closeModal">Cancel</button>
+          <button type="submit" class="primary">Submit via GitHub</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>
+      <a href="https://github.com/awesome-ai-tools/curated-ai-agents">GitHub</a> &middot;
+      <a href="https://github.com/awesome-ai-tools/curated-ai-agents/blob/main/CONTRIBUTING.md">Contribute</a> &middot;
+      <a href="https://github.com/awesome-ai-tools/curated-ai-agents/blob/main/LICENSE">MIT License</a> &middot;
+      <a href="https://github.com/awesome-ai-tools/curated-mcp-servers">Curated MCP Servers</a>
+    </p>
+    <p style="margin-top:8px;">&copy; 2026 awesome-ai-tools</p>
+  </div>
+
+  <script>
+    const agents = [
+      // Agent Frameworks
+      { name: "AutoGPT", url: "https://github.com/Significant-Gravitas/AutoGPT", desc: "An experimental open-source autonomous AI agent that can perform tasks with minimal human intervention using GPT-4.", category: "framework" },
+      { name: "CrewAI", url: "https://github.com/crewAIInc/crewAI", desc: "Framework for orchestrating role-playing autonomous AI agents that work together to accomplish complex tasks.", category: "framework" },
+      { name: "LangGraph", url: "https://github.com/langchain-ai/langgraph", desc: "Library for building stateful, multi-actor applications with LLMs, used to create agent and multi-agent workflows.", category: "framework" },
+      { name: "AutoGen", url: "https://github.com/microsoft/autogen", desc: "Microsoft's framework for building multi-agent conversational AI systems with customizable agents.", category: "framework" },
+      { name: "MetaGPT", url: "https://github.com/geekan/MetaGPT", desc: "Multi-agent framework that assigns different roles to GPTs to form a collaborative software entity.", category: "framework" },
+      { name: "BabyAGI", url: "https://github.com/yoheinakajima/babyagi", desc: "AI-powered task management system that creates, prioritizes, and executes tasks autonomously.", category: "framework" },
+      { name: "Pydantic AI", url: "https://github.com/pydantic/pydantic-ai", desc: "Agent framework for building production-grade applications with generative AI, built by the Pydantic team.", category: "framework" },
+      { name: "DSPy", url: "https://github.com/stanfordnlp/dspy", desc: "Stanford's framework for algorithmically optimizing LM prompts and weights for modular AI systems.", category: "framework" },
+      // Multi-Agent
+      { name: "ChatDev", url: "https://github.com/OpenBMB/ChatDev", desc: "Virtual software company powered by multiple AI agents filling different roles like CEO, CTO, and programmer.", category: "multi-agent" },
+      { name: "AgentVerse", url: "https://github.com/OpenBMB/AgentVerse", desc: "Platform for simulating and deploying multiple AI agents in collaborative or competitive environments.", category: "multi-agent" },
+      { name: "Swarm", url: "https://github.com/openai/swarm", desc: "OpenAI's educational framework for lightweight multi-agent orchestration with handoff patterns.", category: "multi-agent" },
+      { name: "Agency Swarm", url: "https://github.com/VRSEN/agency-swarm", desc: "Framework for creating collaborative swarms of AI agents with distinct roles and communication.", category: "multi-agent" },
+      // Code Agents
+      { name: "SWE-agent", url: "https://github.com/princeton-nlp/SWE-agent", desc: "Princeton's agent that turns LLMs into software engineering agents capable of fixing real GitHub issues.", category: "code" },
+      { name: "OpenHands", url: "https://github.com/All-Hands-AI/OpenHands", desc: "Platform for AI-powered software development agents that interact with terminals, editors, and browsers.", category: "code" },
+      { name: "Aider", url: "https://github.com/paul-gauthier/aider", desc: "AI pair programming tool for collaborating with LLMs to edit code in your local git repository.", category: "code" },
+      { name: "Cline", url: "https://github.com/cline/cline", desc: "Autonomous coding agent for VS Code that can create and edit files, execute commands, and browse the web.", category: "code" },
+      { name: "Continue", url: "https://github.com/continuedev/continue", desc: "Open-source AI code assistant that connects any LLM to your IDE for intelligent coding support.", category: "code" },
+      { name: "PR-Agent", url: "https://github.com/Codium-ai/pr-agent", desc: "AI-powered code review and pull request agent with automated analysis and improvements.", category: "code" },
+      { name: "Devin", url: "https://devin.ai/", desc: "Cognition's fully autonomous AI software engineer that can plan, code, debug, and deploy applications.", category: "code" },
+      // Research
+      { name: "GPT Researcher", url: "https://github.com/assafelovic/gpt-researcher", desc: "Autonomous agent for comprehensive online research, generating detailed reports with citations.", category: "research" },
+      { name: "STORM", url: "https://github.com/stanford-oval/storm", desc: "Stanford's LLM-powered system that researches topics and generates Wikipedia-like articles.", category: "research" },
+      { name: "Tavily", url: "https://github.com/tavily-ai/tavily-python", desc: "Search API optimized for AI agents and LLMs, providing real-time, accurate search results.", category: "research" },
+      { name: "Khoj", url: "https://github.com/khoj-ai/khoj", desc: "Personal AI agent that searches your notes, documents, and the internet to answer questions.", category: "research" },
+      // Browser
+      { name: "Browser Use", url: "https://github.com/browser-use/browser-use", desc: "Python library enabling AI agents to control web browsers with natural language instructions.", category: "browser" },
+      { name: "Skyvern", url: "https://github.com/Skyvern-AI/skyvern", desc: "AI agent that automates browser-based workflows using computer vision and LLMs.", category: "browser" },
+      { name: "Playwright MCP", url: "https://github.com/microsoft/playwright-mcp", desc: "Microsoft's MCP server for Playwright enabling AI agents to interact with web pages.", category: "browser" },
+      { name: "Stagehand", url: "https://github.com/browserbase/stagehand", desc: "AI-powered browser automation combining natural language instructions with Playwright.", category: "browser" },
+      // Automation
+      { name: "n8n", url: "https://github.com/n8n-io/n8n", desc: "Open-source workflow automation tool with AI agent nodes for intelligent process automations.", category: "automation" },
+      { name: "Activepieces", url: "https://github.com/activepieces/activepieces", desc: "Open-source no-code business automation platform with AI-powered workflow builders.", category: "automation" },
+      { name: "Composio", url: "https://github.com/ComposioHQ/composio", desc: "Open-source platform equipping AI agents with 250+ tools and integrations for production use.", category: "automation" },
+      // SDKs
+      { name: "LangChain", url: "https://github.com/langchain-ai/langchain", desc: "Framework for developing LLM-powered applications with composable components and agent tooling.", category: "sdk" },
+      { name: "LlamaIndex", url: "https://github.com/run-llama/llama_index", desc: "Data framework for LLM applications with tools for data ingestion, indexing, and agentic retrieval.", category: "sdk" },
+      { name: "Semantic Kernel", url: "https://github.com/microsoft/semantic-kernel", desc: "Microsoft's SDK for integrating LLMs into applications with plugin architecture and agent capabilities.", category: "sdk" },
+      { name: "Vercel AI SDK", url: "https://github.com/vercel/ai", desc: "TypeScript toolkit for building AI-powered applications with React, Next.js, and other frameworks.", category: "sdk" },
+      { name: "Mastra", url: "https://github.com/mastra-ai/mastra", desc: "TypeScript framework for building AI applications and agents with built-in workflows and RAG.", category: "sdk" },
+      { name: "Spring AI", url: "https://github.com/spring-projects/spring-ai", desc: "Java AI framework providing Spring-friendly APIs for building AI applications with agent support.", category: "sdk" },
+      // Monitoring
+      { name: "Langfuse", url: "https://github.com/langfuse/langfuse", desc: "Open-source LLM engineering platform for observability, analytics, and evaluation.", category: "monitoring" },
+      { name: "Arize Phoenix", url: "https://github.com/Arize-ai/phoenix", desc: "Open-source tool for tracing and evaluating AI agents with ML and LLM observability.", category: "monitoring" },
+      { name: "Helicone", url: "https://github.com/Helicone/helicone", desc: "Open-source observability platform for monitoring LLM applications with logging and caching.", category: "monitoring" },
+      { name: "AgentOps", url: "https://github.com/AgentOps-AI/agentops", desc: "Python SDK for agent monitoring, LLM cost tracking, benchmarking, and replay analytics.", category: "monitoring" },
+    ];
+
+    const grid = document.getElementById('agentGrid');
+    const searchBox = document.getElementById('searchBox');
+    const resultCount = document.getElementById('resultCount');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    let activeFilter = 'all';
+
+    function renderCards() {
+      const query = searchBox.value.toLowerCase();
+      grid.innerHTML = '';
+      let count = 0;
+      agents.forEach(agent => {
+        const matchesFilter = activeFilter === 'all' || agent.category === activeFilter;
+        const matchesSearch = !query || agent.name.toLowerCase().includes(query) || agent.desc.toLowerCase().includes(query) || agent.category.toLowerCase().includes(query);
+        if (matchesFilter && matchesSearch) {
+          count++;
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `<h3><a href="${agent.url}" target="_blank" rel="noopener">${agent.name}</a></h3><p>${agent.desc}</p><span class="tag">${agent.category}</span>`;
+          grid.appendChild(card);
+        }
+      });
+      resultCount.textContent = `Showing ${count} of ${agents.length} agents`;
+    }
+
+    searchBox.addEventListener('input', renderCards);
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.filter;
+        renderCards();
+      });
+    });
+
+    // Modal
+    const modal = document.getElementById('modalOverlay');
+    document.getElementById('openModal').addEventListener('click', () => modal.classList.add('active'));
+    document.getElementById('closeModal').addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+
+    document.getElementById('submitForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('agentName').value;
+      const url = document.getElementById('agentUrl').value;
+      const category = document.getElementById('agentCategory').value;
+      const desc = document.getElementById('agentDesc').value;
+      const issueTitle = encodeURIComponent(`Add: ${name}`);
+      const issueBody = encodeURIComponent(`## AI Agent Details\n\n**Name:** ${name}\n**URL:** ${url}\n**Category:** ${category}\n\n## Description\n\n${desc}`);
+      window.open(`https://github.com/awesome-ai-tools/curated-ai-agents/issues/new?title=${issueTitle}&body=${issueBody}&labels=addition`, '_blank');
+      modal.classList.remove('active');
+    });
+
+    renderCards();
+  </script>
+</body>
+</html>
