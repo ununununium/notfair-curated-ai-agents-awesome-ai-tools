@@ -84,6 +84,7 @@ AI agents specialized in software development, code generation, and debugging.
 - **[OpenHands](https://github.com/All-Hands-AI/OpenHands)** - Platform for AI-powered software development agents that interact with terminals, editors, and browsers.
 - **[Aider](https://github.com/paul-gauthier/aider)** - AI pair programming tool that lets you collaborate with LLMs to edit code in your local git repository.
 - **[Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview)** - Anthropic's agentic coding tool that operates directly in your terminal, understanding your codebase and executing tasks.
+- **[Toprank](https://github.com/nowork-studio/toprank)** - Open-source MIT Claude Code plugin with 9 SEO and Google Ads skills that connects Google Search Console, PageSpeed Insights, and the Google Ads API to ship fixes like meta tag rewrites, JSON-LD schema generation, keyword bid adjustments, and CMS content pushes.
 - **[Cursor](https://www.cursor.com/)** - AI-first code editor with integrated agent mode for autonomous multi-file editing and codebase understanding.
 - **[GPT Engineer](https://github.com/gptengineer/gptengineer)** - AI agent that generates entire codebases from natural language specifications.
 - **[Cline](https://github.com/cline/cline)** - Autonomous coding agent for VS Code that can create and edit files, execute commands, and browse the web.
