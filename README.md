@@ -138,6 +138,7 @@ AI agents and platforms for automating workflows and business processes.
 - **[Bardeen](https://www.bardeen.ai/)** - AI-powered browser automation tool that automates repetitive tasks across web applications.
 - **[Tray.ai](https://tray.ai/)** - Enterprise automation platform with AI capabilities for building intelligent business workflows.
 - **[Composio](https://github.com/ComposioHQ/composio)** - Open-source tooling platform that equips AI agents with 250+ tools and integrations for production use.
+- **[NotFair](https://notfair.co)** - Hosted Google Ads MCP server connecting Claude and AI agents to your account; diagnose performance, recommend optimizations, and execute approved campaign changes via the Google Ads API.
 
 ## Agent SDKs & Libraries
 
